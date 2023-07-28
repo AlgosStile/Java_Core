@@ -34,9 +34,9 @@ public class TicTacToeFileIO {
 
     public static void writeGameBoardToFile(int[][] gameBoard, String filePath) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            for (int i = 0; i < gameBoard.length; i++) {
-                for (int j = 0; j < gameBoard[i].length; j++) {
-                    writer.write(Integer.toString(gameBoard[i][j]));
+            for (int[] ints : gameBoard) {
+                for (int anInt : ints) {
+                    writer.write(Integer.toString(anInt));
                     writer.write(" ");
                 }
                 writer.newLine();
@@ -61,22 +61,14 @@ public class TicTacToeFileIO {
     }
 
     public static void printGameBoard(int[][] gameBoard) {
-        for (int i = 0; i < gameBoard.length; i++) {
-            for (int j = 0; j < gameBoard[i].length; j++) {
-                int value = gameBoard[i][j];
-                String symbol;
-                switch (value) {
-                    case 1:
-                        symbol = "X";
-                        break;
-                    case 2:
-                        symbol = "O";
-                        break;
-                    case 3:
-                        symbol = "•";
-                        break;
-                    default: symbol = "-";
-                }
+        for (int[] ints : gameBoard) {
+            for (int value : ints) {
+                String symbol = switch (value) {
+                    case 1 -> "X";
+                    case 2 -> "O";
+                    case 3 -> "•";
+                    default -> "-";
+                };
                 System.out.print(symbol + " ");
             }
             System.out.println();
