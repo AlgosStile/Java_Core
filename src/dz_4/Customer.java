@@ -25,4 +25,5 @@ class Customer {
     public Object getFullName() {
         return fullName;
     }
+
 }

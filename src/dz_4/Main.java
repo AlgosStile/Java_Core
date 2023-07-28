@@ -3,7 +3,7 @@ package dz_4;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Customer[] customers = new Customer[2];
         customers[0] = new Customer("Иван Иванов", 30, "123456789");
         customers[1] = new Customer("Петр Петров", 25, "987654321");
@@ -30,6 +30,7 @@ public class Main {
         System.out.println(Arrays.toString(orders));
         System.out.println("Количество совершенных покупок: " + countPurchases(orders));
     }
+
 
     public static Order makePurchase(Customer[] customers, Product[] products, String customerName, String productName, int quantity) {
         Customer customer = findCustomer(customers, customerName);

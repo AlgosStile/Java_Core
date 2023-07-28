@@ -14,6 +14,8 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+/путь_к_файлу.txt/
+.txt
 
 ### NetBeans ###
 /nbproject/private/
